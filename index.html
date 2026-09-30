@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="面向中国大陆两人团队的原创珠宝品牌跨境销售方案。">
+  <title>原创独立珠宝品牌｜跨境销售全案</title>
+  <style>
+    :root{--ink:#202124;--muted:#6b7280;--line:#e7e9ed;--paper:#fff;--wash:#f5f6f8;--blue:#1769e0;--blue-soft:#eaf2ff;--green:#16845b;--amber:#a15c00;--shadow:0 16px 44px rgba(25,36,58,.07);--radius:24px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--wash);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .topbar{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(231,233,237,.8)}
+    .topbar-inner{max-width:1180px;margin:auto;padding:12px 26px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brandmark{font-size:13px;font-weight:700;letter-spacing:.08em;color:#323944;white-space:nowrap}
+    .nav{display:flex;gap:20px;overflow:auto;white-space:nowrap;font-size:12px;color:#5b6470}
+    .nav a{color:inherit}
+    main{max-width:1180px;margin:0 auto;padding:30px 26px 80px}
+    .hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#fff 0%,#f5f8ff 55%,#eef3fb 100%);border:1px solid #edf0f5;border-radius:32px;padding:58px 58px 48px;box-shadow:var(--shadow)}
+    .hero:after{content:"";position:absolute;width:370px;height:370px;border:1px solid rgba(23,105,224,.12);border-radius:50%;right:-110px;top:-125px;box-shadow:0 0 0 42px rgba(23,105,224,.025),0 0 0 90px rgba(23,105,224,.018)}
+    .eyebrow{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);font-weight:700}
+    h1{font-size:clamp(34px,5vw,58px);line-height:1.08;letter-spacing:-.045em;max-width:760px;margin:18px 0 16px}
+    .lede{font-size:18px;color:#505967;max-width:750px;margin:0}
+    .hero-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+    .pill{display:inline-flex;align-items:center;border:1px solid #dce4ef;background:rgba(255,255,255,.7);border-radius:999px;padding:6px 12px;font-size:12px;color:#4a5565}
+    .verdict{position:relative;z-index:1;margin-top:34px;padding:18px 22px;border-left:3px solid var(--blue);background:rgba(255,255,255,.76);border-radius:0 14px 14px 0;max-width:890px}
+    .verdict strong{display:block;margin-bottom:4px;font-size:14px}
+    .verdict span{font-size:14px;color:#505967}
+    .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:20px 0 34px}
+    .metric{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px 21px;box-shadow:0 4px 18px rgba(25,36,58,.035)}
+    .metric .value{font-size:29px;letter-spacing:-.04em;font-weight:700;line-height:1.15}
+    .metric .label{font-size:12px;color:var(--muted);margin-top:8px}
+    .metric .source{font-size:11px;margin-top:9px;display:block}
+    .layout{display:grid;grid-template-columns:230px minmax(0,1fr);gap:22px;align-items:start}
+    .toc{position:sticky;top:68px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 17px}
+    .toc h2{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#858d98;margin:0 0 10px}
+    .toc a{display:block;padding:6px 0;font-size:12px;color:#586270}
+    .content{min-width:0}
+    section{scroll-margin-top:82px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px 36px;margin:0 0 18px;box-shadow:0 4px 18px rgba(25,36,58,.03)}
+    .section-head{display:flex;align-items:flex-start;gap:16px;margin-bottom:22px}
+    .num{font-size:11px;font-weight:700;color:var(--blue);background:var(--blue-soft);border-radius:9px;padding:6px 8px;line-height:1.2;letter-spacing:.06em;margin-top:4px}
+    h2{font-size:26px;line-height:1.2;letter-spacing:-.025em;margin:0}
+    .intro{color:var(--muted);font-size:14px;margin:7px 0 0}
+    h3{font-size:16px;line-height:1.35;margin:25px 0 9px;letter-spacing:-.01em}
+    p{margin:9px 0;color:#48515c;font-size:14px}
+    .small{font-size:12px;color:var(--muted)}
+    .callout{background:#f4f7fb;border:1px solid #e7edf5;border-radius:15px;padding:16px 18px;margin:16px 0}
+    .callout.blue{background:#f1f6ff;border-color:#dbe8ff}
+    .callout.warn{background:#fff8ed;border-color:#f5e5ca}
+    .callout strong{color:#26364d}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+    .tile{border:1px solid var(--line);border-radius:16px;padding:17px;background:#fff}
+    .tile h3{margin:0 0 7px;font-size:15px}
+    .tile p{margin:0;font-size:13px}
+    .tag{display:inline-block;background:#f1f3f6;color:#5a6370;font-size:10px;border-radius:999px;padding:4px 8px;margin:0 5px 5px 0}
+    .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;margin:14px 0}
+    table{border-collapse:collapse;width:100%;font-size:12px;min-width:630px}
+    th{background:#f6f7f9;text-align:left;color:#68717d;font-weight:600;font-size:11px}
+    th,td{padding:11px 13px;border-bottom:1px solid #edf0f3;vertical-align:top}
+    tr:last-child td{border-bottom:0}
+    td strong{color:#262e38}
+    .rank{display:inline-block;background:#e9f5ef;color:var(--green);padding:3px 8px;border-radius:999px;font-size:10px;font-weight:700}
+    .muted-rank{display:inline-block;background:#f1f2f4;color:#66707d;padding:3px 8px;border-radius:999px;font-size:10px;font-weight:700}
+    .source-link{font-size:11px;white-space:nowrap}
+    .list{padding-left:19px;margin:8px 0;color:#48515c;font-size:14px}
+    .list li{margin:6px 0}
+    .split{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+    .pricebox{border-radius:18px;background:#152238;color:#fff;padding:22px}
+    .pricebox .price{font-size:27px;font-weight:700;letter-spacing:-.04em}
+    .pricebox p{color:#d9e0e9;font-size:12px}
+    .pricebox small{color:#afbdce}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .step{border-top:2px solid #dce6f5;padding:14px 12px 8px;background:#fafbfd;border-radius:0 0 13px 13px}
+    .step .week{font-size:11px;color:var(--blue);font-weight:700;letter-spacing:.04em}
+    .step h3{font-size:14px;margin:6px 0}
+    .step p{font-size:12px;margin:0}
+    .flow{display:flex;align-items:stretch;gap:8px;flex-wrap:wrap;margin:15px 0}
+    .flow span{flex:1;min-width:120px;background:#f4f6f9;border-radius:12px;padding:12px;text-align:center;font-size:12px;color:#46515e}
+    .flow b{color:var(--blue);align-self:center}
+    .benchmark{display:grid;grid-template-columns:150px 1fr;gap:15px;border-top:1px solid var(--line);padding:17px 0}
+    .benchmark:first-of-type{border-top:0}
+    .benchmark .name{font-size:14px;font-weight:700}
+    .benchmark .handle{font-size:11px;color:var(--muted);display:block;margin-top:4px;font-weight:400}
+    .benchmark p{font-size:13px;margin:2px 0 6px}
+    .benchmark ul{margin:4px 0;padding-left:17px;font-size:12px;color:#56606c}
+    .benchmark li{margin:4px 0}
+    .footer{padding:28px 6px;color:#7b838d;font-size:11px;text-align:center}
+    .ref-list{columns:2;column-gap:26px;padding-left:18px;font-size:11px;color:#5d6672}
+    .ref-list li{break-inside:avoid;margin:0 0 9px;padding-right:8px}
+    .footnote{font-size:11px;color:#7b838d}
+    @media(max-width:900px){.layout{grid-template-columns:1fr}.toc{position:static;display:flex;gap:14px;overflow:auto;white-space:nowrap}.toc h2{display:none}.toc a{padding:0}.metrics{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:620px){
+      main{padding:16px 14px 50px}.topbar-inner{padding:10px 15px}.brandmark{font-size:11px;letter-spacing:.05em}.nav{display:none}
+      .hero{padding:32px 21px 25px;border-radius:23px}.hero:after{width:230px;height:230px;right:-100px;top:-95px}.eyebrow{font-size:10px}.lede{font-size:15px}.hero-meta{gap:7px;margin-top:19px}.pill{font-size:10px;padding:5px 9px}.verdict{margin-top:22px;padding:14px 15px}.verdict span{font-size:13px}
+      .metrics{gap:8px;margin:12px 0 18px}.metric{padding:13px 12px;border-radius:14px}.metric .value{font-size:22px}.metric .label{font-size:10px;line-height:1.45}.metric .source{font-size:10px}
+      .layout{gap:14px}.toc{position:sticky;top:42px;z-index:8;margin:0 -14px;padding:10px 14px;border-left:0;border-right:0;border-radius:0;gap:17px;background:rgba(255,255,255,.94);backdrop-filter:blur(14px)}.toc a{font-size:11px;flex:none}.toc::-webkit-scrollbar{display:none}
+      section{padding:23px 17px;border-radius:18px;margin-bottom:13px}.section-head{gap:10px;margin-bottom:16px}.num{font-size:10px;padding:5px 7px}h2{font-size:22px}.intro{font-size:12px}.content p,.list{font-size:13px}.grid-2,.grid-3,.split{grid-template-columns:1fr}.tile{padding:15px}.tile p{font-size:12px}.benchmark{grid-template-columns:1fr;gap:7px}.ref-list{columns:1}.steps{grid-template-columns:1fr}.step{padding:12px}.step p{font-size:12px}
+      .flow{display:grid;grid-template-columns:1fr;gap:4px}.flow span{min-width:0;padding:10px;font-size:12px}.flow b{transform:rotate(90deg);justify-self:center;line-height:1}
+      .table-wrap{overflow:visible;border:0;border-radius:0;margin:12px 0}.table-wrap table,.table-wrap tbody{display:block;width:100%;min-width:0}.table-wrap thead{display:none}.table-wrap tbody{display:grid;gap:10px}.table-wrap tr{display:block;background:#fff;border:1px solid var(--line);border-radius:14px;padding:3px 12px;box-shadow:0 3px 12px rgba(25,36,58,.035)}.table-wrap td{display:grid;grid-template-columns:88px minmax(0,1fr);gap:8px;align-items:start;padding:10px 0;border-bottom:1px solid #edf0f3;font-size:12px;line-height:1.5;overflow-wrap:anywhere}.table-wrap td:last-child{border-bottom:0}.table-wrap td::before{content:attr(data-label);font-size:10px;font-weight:700;letter-spacing:.02em;color:#75808c}.table-wrap td strong{font-size:13px}
+      .callout{padding:14px}.pricebox{padding:18px}.pricebox .price{font-size:24px}.source-link{white-space:normal}.footer{font-size:10px;padding:20px 5px}
+    }
+    @media(max-width:380px){h1{font-size:30px}.hero{padding-left:18px;padding-right:18px}.metric .value{font-size:20px}.table-wrap td{grid-template-columns:76px minmax(0,1fr);gap:7px}}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brandmark">FIELDNOTE&nbsp; / &nbsp;CROSS-BORDER JEWELRY</div>
+      <nav class="nav" aria-label="页面导航">
+        <a href="#market">市场</a><a href="#product">产品</a><a href="#channels">渠道</a><a href="#benchmarks">对标</a><a href="#site">独立站</a><a href="#payments">收款</a><a href="#roadmap">90天计划</a>
+      </nav>
+    </div>
+  </div>
+  <main>
+    <header class="hero">
+      <div class="eyebrow">原创品牌 · 美国优先 · 小额验证</div>
+      <h1>从一条原创手链，<br>验证一个独立品牌。</h1>
+      <p class="lede">为大陆两人团队设计的跨境启动方案。先用原创造型和小批量真实反馈验证产品，再增加库存、独立站功能和广告投入。</p>
+      <div class="hero-meta">
+        <span class="pill">建议首发市场：美国</span>
+        <span class="pill">首发产品：原创雕塑感手链</span>
+        <span class="pill">团队：两位创始人 + AI</span>
+        <span class="pill">数据截至：2026-09-30</span>
+      </div>
+      <div class="verdict">
+        <strong>建议的启动路径</strong>
+        <span>先用 Amazon.com 个人卖家路径承接小规模订单；Instagram / TikTok 短视频做内容验证，前提是你们有稳定可持续的发布方式。独立站先做轻量介绍与邮件收集，收款账户和产品成本验证通过后再开完整结账。</span>
+      </div>
+    </header>
+
+    <div class="metrics" aria-label="关键数据">
+      <div class="metric"><div class="value">$1.036B</div><div class="label">美国 2023 年 HS 7117 仿饰品进口额，候选单一国家最大</div><a class="source" href="https://wits.worldbank.org/trade/comtrade/en/country/All/year/2023/tradeflow/Imports/partner/WLD/product/7117" target="_blank" rel="noreferrer">WITS / UN Comtrade ↗</a></div>
+      <div class="metric"><div class="value">$1.234T</div><div class="label">美国 2025 年零售电商销售额；同比增长 5.4%</div><a class="source" href="https://www2.census.gov/retail/releases/historical/ecomm/25q4.pdf" target="_blank" rel="noreferrer">U.S. Census Bureau ↗</a></div>
+      <div class="metric"><div class="value">55% / 42%</div><div class="label">美国女性受访者表示使用 Instagram / TikTok</div><a class="source" href="https://www.pewresearch.org/wp-content/uploads/sites/20/2025/11/PI_2025.11.20_Social-Media-Use_REPORT.pdf" target="_blank" rel="noreferrer">Pew Research Center, 2025 ↗</a></div>
+      <div class="metric"><div class="value">20%</div><div class="label">Amazon 美国站珠宝类目，售价前 $250 部分的推荐费</div><a class="source" href="https://sell.amazon.com/pricing/" target="_blank" rel="noreferrer">Amazon fee schedule ↗</a></div>
+    </div>
+
+    <div class="layout">
+      <aside class="toc">
+        <h2>Plan</h2>
+        <a href="#decision">01 结论</a><a href="#market">02 市场</a><a href="#product">03 产品</a><a href="#channels">04 渠道</a><a href="#benchmarks">05 对标</a><a href="#site">06 网站与承接</a><a href="#payments">07 收款与经济账</a><a href="#roadmap">08 90天安排</a><a href="#course">09 课程记录</a><a href="#sources">数据来源</a>
+      </aside>
+
+      <div class="content">
+        <section id="decision">
+          <div class="section-head"><span class="num">01</span><div><h2>结论先行</h2><p class="intro">市场大不等于容易卖；这个方案优先看需求空间与大陆团队的启动门槛。</p></div></div>
+          <div class="grid-3">
+            <div class="tile"><h3>首发市场：美国</h3><p>仿饰品进口规模领先，零售电商体量大，女性在 Instagram、TikTok 的使用率为可视化内容提供了受众基础。竞争也最激烈，所以只测一个英雄产品。</p></div>
+            <div class="tile"><h3>首发渠道：Amazon + 内容</h3><p>Amazon 允许个人卖家注册，不必先成立 LLC；但珠宝推荐费高。短视频负责展示设计和实物，Amazon 负责初期交易与交付体验。</p></div>
+            <div class="tile"><h3>独立站：先轻后全</h3><p>中国大陆商户不能使用 Shopify Payments，需配置第三方支付。先确认账户与结账可用，再付费搭完整站；独立站不能替代获客。</p></div>
+          </div>
+          <div class="callout blue"><strong>关键判断：</strong>用原创设计而非品牌替代品的逻辑竞争。建立一个能讲清楚“造型来源、佩戴体验、材料规格、交付与售后”的品牌理由；如果产品只靠像某个奢侈品牌来吸引点击，建议停止并重新设计。</div>
+        </section>
+
+        <section id="market">
+          <div class="section-head"><span class="num">02</span><div><h2>国家 / 地区筛选</h2><p class="intro">用同一商品编码比较进口需求，再结合电商成熟度、内容渠道和操作门槛。</p></div></div>
+          <p>HS 7117 是“仿饰品”贸易分类，适合做时尚饰品需求代理指标；它包含多种材质、价位和销售渠道，不能直接当作原创手链的零售 TAM。现有统一可比表为 2023 年数据。</p>
+          <div class="table-wrap"><table>
+            <thead><tr><th>市场</th><th>2023 HS 7117 进口额</th><th>团队适配判断</th><th>建议顺序</th></tr></thead>
+            <tbody>
+              <tr><td data-label="市场"><strong>美国</strong></td><td data-label="2023 HS 7117 进口额">$1,035.6M</td><td data-label="团队适配判断">规模最大；2025 零售电商 $1.234T。可用 Amazon 个人卖家路径起步，英语内容可跨平台复用。竞争和平台费压力高。</td><td data-label="建议顺序"><span class="rank">首发</span></td></tr>
+              <tr><td data-label="市场">法国</td><td data-label="2023 HS 7117 进口额">$615.3M</td><td data-label="团队适配判断">进口规模第二；欧盟线上购物成熟，但法语商品页、客服与本地化投入增加两人团队负担。</td><td data-label="建议顺序"><span class="muted-rank">后续验证</span></td></tr>
+              <tr><td data-label="市场">德国</td><td data-label="2023 HS 7117 进口额">$457.5M</td><td data-label="团队适配判断">进口额高；适合后续评估 Amazon EU，但需要德语页面、退货与欧盟多国运营准备。</td><td data-label="建议顺序"><span class="muted-rank">后续验证</span></td></tr>
+              <tr><td data-label="市场">英国</td><td data-label="2023 HS 7117 进口额">$379.7M</td><td data-label="团队适配判断">英语市场。TikTok Shop 有跨境卖家通道，但要求常住地公司、英国退货地址，并可能需要邀请代码；不适合当前无公司状态直接开跑。</td><td data-label="建议顺序"><span class="muted-rank">第二阶段</span></td></tr>
+              <tr><td data-label="市场">日本</td><td data-label="2023 HS 7117 进口额">$323.2M</td><td data-label="团队适配判断">METI 报告 2024 年 B2C 电商约 ¥26.1T；但饰品类目未单列，日语内容和本地客服增加工作量。</td><td data-label="建议顺序"><span class="muted-rank">储备</span></td></tr>
+              <tr><td data-label="市场">加拿大</td><td data-label="2023 HS 7117 进口额">$173.8M</td><td data-label="团队适配判断">体量小于美国，但 Amazon 北美账户可延伸至加拿大；待美国物流、定价和退货跑顺再做。</td><td data-label="建议顺序"><span class="muted-rank">美国之后</span></td></tr>
+            </tbody>
+          </table></div>
+          <div class="grid-2">
+            <div class="tile"><h3>美国的需求与渠道信号</h3><p>2025 年美国电商占零售总额 16.4%，全年零售电商销售额同比增长 5.4%。Pew 2025 调查中，美国女性 Instagram 使用率 55%、TikTok 42%。这些数据支持“电商 + 视觉内容”作为测试组合，不代表珠宝购买转化率。</p><p class="small"><a href="https://www2.census.gov/retail/releases/historical/ecomm/25q4.pdf" target="_blank" rel="noreferrer">Census 数据</a> · <a href="https://www.pewresearch.org/wp-content/uploads/sites/20/2025/11/PI_2025.11.20_Social-Media-Use_REPORT.pdf" target="_blank" rel="noreferrer">Pew 调查</a></p></div>
+            <div class="tile"><h3>欧洲与日本为何不先做</h3><p>欧盟 2024 年 77% 的互联网用户过去一年有网上购物，服装、鞋和配饰是热门线上品类；日本整体 B2C 电商也在增长。但这些是总体线上消费信号，不能覆盖珠宝的获客成本、价格偏好或退货表现。先集中一个英语市场，降低客服和内容复杂度。</p><p class="small"><a href="https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20250220-3?etrans=hu" target="_blank" rel="noreferrer">Eurostat</a> · <a href="https://www.meti.go.jp/english/press/2025/0826_003.html" target="_blank" rel="noreferrer">日本 METI</a></p></div>
+          </div>
+          <div class="callout warn"><strong>数据限制：</strong>进口额可能受转口、产业供应链和统计口径影响；它表示市场交易规模，不等于消费者对你这款产品的需求。最终决策要靠竞品价格、买家访谈、样品反馈和真实订单贡献毛利。</div>
+        </section>
+
+        <section id="product">
+          <div class="section-head"><span class="num">03</span><div><h2>产品与品牌定位</h2><p class="intro">从“某个品牌的平替”转为一个有自有识别度的原创设计商品。</p></div></div>
+          <div class="split">
+            <div>
+              <h3>定位假设</h3>
+              <p><strong>面向日常佩戴与送礼的原创设计珠宝</strong>：用独立造型、可靠佩戴体验和清楚的材质说明，提供“设计感明显、日常容易搭”的理由。首发受众先测试 25–44 岁、会购买配饰的美国女性；年龄范围是研究假设，不是已证实画像。</p>
+              <h3>原创设计方向</h3>
+              <p>建议把首款做成一条<strong>非对称折线 / 水流弧面结构的雕塑感手链</strong>：只有一个自有主造型，重点呈现曲面、留白与腕间比例。方向只是设计 brief，需由设计师重新绘制、打样和做原创性检索。</p>
+              <p class="small">设计评审时检查整体轮廓、重复单元、连接方式、比例、表面纹理、扣件与包装。不要围绕其他品牌的专属名称、标识、经典图形或整体观感来做设计与营销。</p>
+            </div>
+            <div class="pricebox">
+              <div class="eyebrow" style="color:#9fc2ff">首发 SKU 假设</div>
+              <div class="price">1 款 × 2 色</div>
+              <p>先做一个原创手链，金色与银色两个表面处理。确认样品、材料和交付稳定后再增加耳饰或叠戴组合。</p>
+              <p><strong>试价区间：$69–$89</strong><br><small>仅作为愿付价格测试范围。最终价格由样品成本、检测、履约、平台费、退货和可承受获客成本倒推。</small></p>
+            </div>
+          </div>
+          <div class="grid-3">
+            <div class="tile"><h3>材料路线 A｜轻量试水</h3><p>不锈钢基材 + 经供应商证明的表面处理，先验证耐磨、变色、扣件和佩戴舒适度。不要未经测试就承诺“防水、永不褪色、抗敏”。</p></div>
+            <div class="tile"><h3>材料路线 B｜提高客单</h3><p>925 银或更高等级材料，需重新核算原料、镀层厚度、检测和小批量成本。确认需求后再走，不为了抬价先增加复杂度。</p></div>
+            <div class="tile"><h3>出货前检验</h3><p>检查重量、尺寸、闭合牢度、边缘刮手、镀层均匀、色差、佩戴后摩擦表现和包装运输损伤。留存真实规格与供应商批次。</p></div>
+          </div>
+          <h3>品牌承诺只保留三件事</h3>
+          <div class="flow"><span>原创造型：由你们解释它从哪里来</span><b>→</b><span>真实材质：规格和检测能对上</span><b>→</b><span>可靠体验：尺寸、发货、退换说清楚</span></div>
+        </section>
+
+        <section id="channels">
+          <div class="section-head"><span class="num">04</span><div><h2>平台组合与流量路径</h2><p class="intro">先让一个渠道完成交易，其余渠道服务于需求发现和品牌证明。</p></div></div>
+          <div class="table-wrap"><table>
+            <thead><tr><th>平台 / 角色</th><th>建议用途</th><th>依据与限制</th><th>起步动作</th></tr></thead>
+            <tbody>
+              <tr><td data-label="平台 / 角色"><strong>Amazon.com</strong><br><span class="tag">首发交易</span></td><td data-label="建议用途">商品搜索、评价积累、订单与退款闭环。</td><td data-label="依据与限制">官方允许个人卖家注册；银行账户可在本人或公司名下，不必开美国银行账户。珠宝推荐费为前 $250 部分的 20%，低价产品需要更认真地算毛利。</td><td data-label="起步动作">先核验个人账户能否通过中国证件与收款账户审核；使用 Individual 计划小批量测试，先按实际履约报价决定自发货或 FBA。</td></tr>
+              <tr><td data-label="平台 / 角色"><strong>Instagram Reels</strong><br><span class="tag">品牌发现</span></td><td data-label="建议用途">腕上比例、搭配、设计过程、买家实拍。</td><td data-label="依据与限制">Pew 2025 调查中美国女性使用率 55%。适合视觉展示，但使用率不代表广告转化率。</td><td data-label="起步动作">同一素材剪成 10–20 秒短片，使用真实手腕和自然光；主页链接指向 Amazon 或后续独立站。</td></tr>
+              <tr><td data-label="平台 / 角色"><strong>TikTok</strong><br><span class="tag">短视频发现</span></td><td data-label="建议用途">设计过程、试戴比较、材质解释、创作者内容。</td><td data-label="依据与限制">美国女性使用率 42%。TikTok Shop 美国本地卖家注册文件要求与美国身份/地址相关；中国跨境 Global Selling 属于单独路径，当前先不把它作为必要销售条件。</td><td data-label="起步动作">先测试自然内容和创作者反馈；开始前确认团队有可持续的内容发布条件。美国 Shop 跨境资格需通过官方 Global Selling 路径单独核实。</td></tr>
+              <tr><td data-label="平台 / 角色"><strong>Shopify 独立站</strong><br><span class="tag">品牌资产</span></td><td data-label="建议用途">完整品牌故事、邮件名单、复购和客户服务。</td><td data-label="依据与限制">大陆商户不能用 Shopify Payments，需要第三方收款。无流量的店铺不会自动带来顾客。</td><td data-label="起步动作">前期只做轻量介绍页和邮件名单；确认支付、履约和退款机制后，搭完整商品页与结账。</td></tr>
+              <tr><td data-label="平台 / 角色"><strong>Etsy</strong><br><span class="tag">暂不列入</span></td><td data-label="建议用途">原创手工饰品常被拿来考虑，但不适合当前新开店计划。</td><td data-label="依据与限制">Etsy 官方当前说明：中国新店暂不能开通；只有已开店卖家可用 Etsy Payments。</td><td data-label="起步动作">不把 Etsy 作为业务计划的前提。</td></tr>
+            </tbody>
+          </table></div>
+          <div class="callout"><strong>推荐流量路径：</strong><div class="flow"><span>短视频 / 创作者内容</span><b>→</b><span>Amazon 详情页（初期）</span><b>→</b><span>有复购和邮件名单后再转独立站经营</span></div><p class="small">若团队无法稳定运营目标社交平台，可先与当地创作者按样品或明确佣金合作；不要先买大额曝光。</p></div>
+        </section>
+
+        <section id="benchmarks">
+          <div class="section-head"><span class="num">05</span><div><h2>原创珠宝对标拆解</h2><p class="intro">参考公开账号和店铺的内容结构、商品解释与成交细节，不照搬其图形、文案或素材。</p></div></div>
+          <div class="benchmark">
+            <div class="name"><a href="https://mejuri.com/world/en/" target="_blank" rel="noreferrer">Mejuri</a><span class="handle"><a href="https://www.instagram.com/mejuri/" target="_blank" rel="noreferrer">Instagram @mejuri</a> · <a href="https://www.tiktok.com/@mejuri" target="_blank" rel="noreferrer">TikTok @mejuri</a></span></div>
+            <div><p><strong>打法：</strong>“珠宝适合日常佩戴”的清楚定位，用系列搭配、叠戴和真实生活场景，把单件产品连接到持续购买。</p><ul><li>主页可学习：先讲佩戴场景，再进入系列和搭配购买。</li><li>TikTok 官方案例称其测试搜索广告与创作者 Spark Ads；案例报告的 ROAS / CPA 改善是品牌场景结果，不是新店预测值。</li><li>你们的起步动作：先做搜索式内容，如“手链怎么选尺寸”“一条手链三种搭法”，记录收藏、主页点击和商品访问。</li></ul><a class="source-link" href="https://ads.tiktok.com/business/en-CA/inspiration/mejuri-search-ads-case-study?acq_banner_version=73758464" target="_blank" rel="noreferrer">TikTok for Business 案例 ↗</a></div>
+          </div>
+          <div class="benchmark">
+            <div class="name"><a href="https://www.analuisa.com/" target="_blank" rel="noreferrer">Ana Luisa</a><span class="handle"><a href="https://www.instagram.com/analuisany/" target="_blank" rel="noreferrer">Instagram @analuisany</a></span></div>
+            <div><p><strong>打法：</strong>品类清楚、个性化与礼物入口明显；网站突出免邮门槛、客服、退换和保修。官方创作者项目欢迎小体量创作者，强调真实评价与合作披露。</p><ul><li>你们的起步动作：寄样后邀请创作者按自己的风格拍摄，允许真实评价；赠品或付费合作都清楚披露。</li><li>建立一页材料与保养说明，减少“尺寸 / 变色 / 皮肤反应”类购买疑虑。</li></ul><a class="source-link" href="https://www.analuisa.com/pages/become-an-influencer/" target="_blank" rel="noreferrer">官方创作者计划 ↗</a></div>
+          </div>
+          <div class="benchmark">
+            <div class="name"><a href="https://www.linjer.co/en-us/pages/our-story" target="_blank" rel="noreferrer">Linjer</a><span class="handle"><a href="https://www.instagram.com/linjerco/" target="_blank" rel="noreferrer">Instagram @linjerco</a></span></div>
+            <div><p><strong>打法：</strong>把“为什么价格合理”讲成品牌故事：直面消费者、材料选择、供应链和产品耐用性；页面展示创作者穿搭、顾客评论和保修。</p><ul><li>你们的起步动作：解释设计灵感和真实材料，不靠“和大牌一样”做价值主张。</li><li>环保、回收、耐用等说法必须能拿出证据；没有证明时就不当作卖点。</li></ul><a class="source-link" href="https://www.linjer.co/en-us/pages/our-story" target="_blank" rel="noreferrer">品牌故事 ↗</a> · <a class="source-link" href="https://www.linjer.co/en-ca/pages/faq" target="_blank" rel="noreferrer">FAQ / 交付与保修 ↗</a></div>
+          </div>
+          <div class="benchmark">
+            <div class="name"><a href="https://us.missoma.com/" target="_blank" rel="noreferrer">Missoma</a><span class="handle"><a href="https://www.instagram.com/missomalondon/" target="_blank" rel="noreferrer">Instagram @missomalondon</a></span></div>
+            <div><p><strong>打法：</strong>商品页明确材质、尺寸、重量、佩戴理由、退货与保修。当前公开商品例子中，一款镀层不锈钢手链标价 $99，另一款手链标价 $128。</p><ul><li>你们的起步动作：每张产品页要说明手腕尺寸、链长、重量、扣件、材料和实际发货时间。</li><li>价格只能作为同类商品参照；需要按你们的制造质量与履约成本重算。</li></ul><a class="source-link" href="https://us.missoma.com/products/classic-thin-snake-chain-bracelet-18k-gold-plated" target="_blank" rel="noreferrer">$99 商品页 ↗</a> · <a class="source-link" href="https://us.missoma.com/products/heirloom-chain-bracelet-platinum-plated" target="_blank" rel="noreferrer">$128 商品页 ↗</a></div>
+          </div>
+        </section>
+
+        <section id="site">
+          <div class="section-head"><span class="num">06</span><div><h2>独立站、落地页与客户承接</h2><p class="intro">前期一页讲透一款商品；有订单证据后，再扩成完整品牌站。</p></div></div>
+          <div class="grid-2">
+            <div class="tile"><h3>第一阶段：轻量验证页</h3><p>一屏品牌介绍 + 真实产品渲染 / 样品图 + 邮件登记 + 预计发售时间。清楚告知这是意向登记，不收款、不制造虚假库存紧张。</p></div>
+            <div class="tile"><h3>第二阶段：可交易独立站</h3><p>首页、手链系列、商品详情、设计故事、材料与保养、发货与退换、FAQ、联系页。核心语言先用英文，先服务一个国家。</p></div>
+          </div>
+          <h3>商品落地页建议顺序</h3>
+          <div class="flow"><span>产品佩戴主图 + 明确标题</span><b>→</b><span>价格 / 颜色 / 尺寸 / CTA</span><b>→</b><span>实物近景与 360° 短片</span><b>→</b><span>材料、重量和佩戴说明</span><b>→</b><span>发货、退货、FAQ 与评价</span></div>
+          <div class="grid-3">
+            <div class="tile"><h3>图片清单</h3><p>手腕正侧面、不同肤色实戴、闭合方式、边缘和镀层近景、尺寸参照、包装与开箱、叠戴场景。真实产品为准，不能用 AI 把造型或材质修成未交付的样子。</p></div>
+            <div class="tile"><h3>文案信息</h3><p>设计由来、具体材料、尺寸范围、重量、表面处理、保养方式、包装内容、生产地、出库时效、运费和退换。每一条承诺都要有依据。</p></div>
+            <div class="tile"><h3>转化信任</h3><p>早期没有顾客评价时就展示创作过程、样品迭代和检验细节；收到授权后再上真实顾客照片。客服邮箱、常见问题、退款和订单追踪要容易找到。</p></div>
+          </div>
+          <h3>两人客服流程</h3>
+          <div class="grid-2">
+            <div class="tile"><p><strong>自动化：</strong>下单确认、发货与追踪、保养说明、常见问题模板。AI 可先草拟多语言回复与归类订单问题。</p></div>
+            <div class="tile"><p><strong>人工确认：</strong>退款、丢件、皮肤不适、商品质量投诉、支付争议和任何超出政策的承诺由人处理。AI 回复不能替代核实订单与实物情况。</p></div>
+          </div>
+        </section>
+
+        <section id="payments">
+          <div class="section-head"><span class="num">07</span><div><h2>收款方案与单品经济账</h2><p class="intro">优先使用可核实的真实身份和商户信息；正式投放前做一笔小额完整测试，包括退款。</p></div></div>
+          <div class="table-wrap"><table>
+            <thead><tr><th>场景</th><th>可选方案</th><th>费用 / 门槛</th><th>建议</th></tr></thead>
+            <tbody>
+              <tr><td data-label="场景">Amazon.com</td><td data-label="可选方案">Amazon 卖家账户回款至本人或公司名下银行账户；官方说明不必有美国银行账户，可通过其货币转换服务收款。</td><td data-label="费用 / 门槛">个人计划 $0.99 / 件；专业计划 $39.99 / 月；珠宝推荐费前 $250 部分为 20%。履约与 FBA 另计。</td><td data-label="建议">以个人计划做小规模验证。账户文件、居住地址、银行账户持有人信息要保持一致。</td></tr>
+              <tr><td data-label="场景">Shopify 独立站</td><td data-label="可选方案">大陆无 Shopify Payments，需从中国可用的第三方服务商中选择。PayPal 中国跨境账户可接受国际商业付款；个体类账户要求中国居民且年满 18 岁。</td><td data-label="费用 / 门槛">PayPal 中国跨境账户国际收款公开费率为 4.40% + 固定费；美元固定费 $0.30。Shopify Basic 使用第三方网关另收 2% 平台交易费；Basic 年付 $29 / 月，月付 $39。</td><td data-label="建议">收款账户通过审核、Shopify checkout 可用后再正式开站。商店币种用 USD 才能在 Shopify 结账显示 PayPal；CNY 不支持 PayPal 作为该项付款方式。</td></tr>
+              <tr><td data-label="场景">英国 TikTok Shop</td><td data-label="可选方案">跨境卖家通道需要常住地已注册公司，英国退货地点；平台还可能要求 VAT 号和邀请代码。</td><td data-label="费用 / 门槛">新公司、英国退货地址和邀请资格会带来额外固定工作。</td><td data-label="建议">列为后续选项；符合条件前不要把它写进收入预测。</td></tr>
+            </tbody>
+          </table></div>
+          <div class="callout blue"><strong>$79 售价的费用示例（美元，未包含其他成本）</strong><p>Amazon 个人计划：$79 × 20% + $0.99 = <strong>$16.79</strong>，约为售价 21.3%。Shopify Basic + PayPal 国际收款：$79 × (4.4% + 2%) + $0.30 = <strong>$5.36</strong>，约为售价 6.8%，另加月费、可能的汇兑、运费、退款和获客成本。这个比较不代表独立站更容易卖；Amazon 有平台需求，独立站需要自己带来顾客。</p></div>
+          <h3>每单贡献毛利公式</h3>
+          <div class="callout"><strong>可用于广告的单笔空间 = 实收商品收入 − 制造与包装 − 国际头程 / 本地履约 − 平台及支付费 − 运费补贴 − 退款损耗预留 − 税费</strong><p>先用真实报价填完公式，再定义“最大获客成本”。当自然流量还没有收藏、询盘或订单信号时，付费广告预算保持为零；出现稳定转化后再做金额封顶的小测试。</p></div>
+          <p class="small">PayPal 的 RMB 结汇费、Shopify 网关支持情况和平台费可能变化。PayPal 当前有阶段性结汇优惠，财务模型按常规收费测算，不把短期优惠算成长期利润。</p>
+        </section>
+
+        <section id="roadmap">
+          <div class="section-head"><span class="num">08</span><div><h2>90 天执行安排</h2><p class="intro">每个阶段有输出和继续条件；预算与产品 MOQ 明确前，不扩大库存。</p></div></div>
+          <div class="steps">
+            <div class="step"><div class="week">第 1–2 周</div><h3>确定产品假设</h3><p>访谈目标买家；分析 10 个原创珠宝竞品；画 3 个完全原创概念；询价至少 3 家供应商。</p></div>
+            <div class="step"><div class="week">第 3–4 周</div><h3>打样与验证</h3><p>选 1–2 个样品方案；检验尺寸、舒适度、镀层和扣件；完成轻量落地页与首轮内容；收集真实反馈和邮件意向。</p></div>
+            <div class="step"><div class="week">第 5–8 周</div><h3>小批量上线</h3><p>只在单品经济账通过、平台账户完成审核、履约时效可兑现后订首批货；先上线 Amazon；同一时间发布短视频并回复客户。</p></div>
+            <div class="step"><div class="week">第 9–12 周</div><h3>复盘与扩张门槛</h3><p>复盘转化、贡献毛利、退货与售后原因；决定继续、改款或停止。通过后再开完整 Shopify 结账、试创作者合作和小额广告。</p></div>
+          </div>
+          <h3>每周固定节奏</h3>
+          <div class="grid-3">
+            <div class="tile"><h3>周一：看数据</h3><p>订单、访问、加购、转化、流量来源、毛利、退货和客服问题。</p></div>
+            <div class="tile"><h3>周中：做内容</h3><p>拍 2–3 条短视频：设计过程、真实上手、规格 / 尺寸 / 保养答疑；跨平台复用。</p></div>
+            <div class="tile"><h3>周末：作决定</h3><p>保留一个有效主题，修改一个低效环节，记录支出和下一周要验证的问题。</p></div>
+          </div>
+          <h3>继续 / 调整 / 停止门槛</h3>
+          <ul class="list">
+            <li><strong>继续：</strong>买家能说清这款的购买理由；样品质量稳定；目标售价下订单贡献毛利为正；平台审核和履约方式已确认。</li>
+            <li><strong>调整：</strong>内容有人保存 / 点击但不购买，优先检查价格、商品解释、尺寸信任或运费呈现，先修一项再测。</li>
+            <li><strong>停止：</strong>差异化只能靠模仿其他品牌表达；扣除平台、物流与退货后无法留出获客空间；供应商无法稳定提供承诺规格；试错投入会超过你们设定的上限。</li>
+          </ul>
+        </section>
+
+        <section id="course">
+          <div class="section-head"><span class="num">09</span><div><h2>把创业过程沉淀成课程案例</h2><p class="intro">课程素材从验证开始记，经营数据从真实订单来。</p></div></div>
+          <div class="grid-2">
+            <div class="tile"><h3>每个决策记录 7 项</h3><p>日期与目标、原始假设、数据来源、AI 提示词与输出、人工核验和修改、实际成本、结果与下一步。</p></div>
+            <div class="tile"><h3>课程模块顺序</h3><p>市场判断 → 原创产品 brief → 样品与供应链 → 商品图与落地页 → 账号与获客 → 收款及订单 → 客服与退货 → 单位经济模型 → 复盘与扩张。</p></div>
+          </div>
+          <div class="callout"><strong>课程可信度来自“全过程记录”。</strong>保存原始样品、供应商报价、内容版本、广告收据、订单和售后数据；公开课程前隐去客户与供应商隐私，并把失败实验完整纳入案例。</div>
+          <p><strong>分工建议：</strong>一人负责产品与供应商验证；另一人负责客户反馈、内容拍摄和订单 / 售后记录；两人每周共同做去留决定。Codex 负责资料整理、文案初稿、页面原型、FAQ 和复盘摘要，所有材料与承诺由你们核对。</p>
+        </section>
+
+        <section id="sources">
+          <div class="section-head"><span class="num">↗</span><div><h2>数据与规则来源</h2><p class="intro">优先使用统计部门、平台帮助中心和品牌自有页面。市场数据是机会信号，不是销售保证。</p></div></div>
+          <ol class="ref-list">
+            <li><a href="https://wits.worldbank.org/trade/comtrade/en/country/All/year/2023/tradeflow/Imports/partner/WLD/product/7117" target="_blank" rel="noreferrer">World Bank WITS / UN Comtrade：2023 HS 7117 各国进口</a></li>
+            <li><a href="https://www2.census.gov/retail/releases/historical/ecomm/25q4.pdf" target="_blank" rel="noreferrer">U.S. Census Bureau：2025 全年及第四季度电商数据</a></li>
+            <li><a href="https://www.pewresearch.org/wp-content/uploads/sites/20/2025/11/PI_2025.11.20_Social-Media-Use_REPORT.pdf" target="_blank" rel="noreferrer">Pew Research Center：Americans’ Social Media Use 2025</a></li>
+            <li><a href="https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20250220-3?etrans=hu" target="_blank" rel="noreferrer">Eurostat：2024 年欧盟线上购物</a></li>
+            <li><a href="https://www.meti.go.jp/english/press/2025/0826_003.html" target="_blank" rel="noreferrer">日本经产省 METI：FY2024 电商市场报告</a></li>
+            <li><a href="https://sell.amazon.com/sell/registration-guide" target="_blank" rel="noreferrer">Amazon：卖家注册和个人卖家说明</a></li>
+            <li><a href="https://sell.amazon.com/pricing/" target="_blank" rel="noreferrer">Amazon：美国站计划费与类目推荐费</a></li>
+            <li><a href="https://help.etsy.com/hc/en-us/articles/115015710408-Countries-Eligible-for-Etsy-Payments" target="_blank" rel="noreferrer">Etsy：支付地区资格与中国新店说明</a></li>
+            <li><a href="https://sf16-sg.tiktokcdn.com/obj/eden-sg/ylauljylsslz_lm_uhsslnht/ljhwZthlaukjlkulzlp/contract/TikTokShop_Cross_Border_Seller_Registration_Guidelines.pdf" target="_blank" rel="noreferrer">TikTok Shop：英国跨境卖家注册指南</a></li>
+            <li><a href="https://help.shopify.com/en/manual/intro-to-shopify/initial-setup/sell-in-china/set_up_payments" target="_blank" rel="noreferrer">Shopify：为中国商家设置支付</a></li>
+            <li><a href="https://www.paypal.cn/portal/account-selection?locale.x=en" target="_blank" rel="noreferrer">PayPal China：跨境收款账户类型</a></li>
+            <li><a href="https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=en" target="_blank" rel="noreferrer">PayPal China：跨境支付服务协议</a></li>
+            <li><a href="https://www.paypal.com/c2/business/paypal-business-fees?locale.x=en_C2" target="_blank" rel="noreferrer">PayPal：大陆商户国际交易费率</a></li>
+            <li><a href="https://www.shopify.com/pricing" target="_blank" rel="noreferrer">Shopify：当前公开价格</a></li>
+            <li><a href="https://ads.tiktok.com/business/en-CA/inspiration/mejuri-search-ads-case-study?acq_banner_version=73758464" target="_blank" rel="noreferrer">TikTok for Business：Mejuri 搜索广告案例</a></li>
+            <li><a href="https://www.analuisa.com/pages/become-an-influencer/" target="_blank" rel="noreferrer">Ana Luisa：官方创作者合作说明</a></li>
+            <li><a href="https://www.linjer.co/en-us/pages/our-story" target="_blank" rel="noreferrer">Linjer：品牌故事</a></li>
+            <li><a href="https://us.missoma.com/products/classic-thin-snake-chain-bracelet-18k-gold-plated" target="_blank" rel="noreferrer">Missoma：商品售价、材料与规格示例</a></li>
+          </ol>
+          <p class="footnote">网页价格、支付费率、平台注册政策会变化。实际开店时应以账户后台和当日官方页面为准。进口统计与社交调查使用的年份、定义和口径不同，不能直接互相换算。</p>
+        </section>
+      </div>
+    </div>
+    <footer class="footer">原创独立珠宝品牌跨境销售全案 · 2026 年 9 月 30 日 · 为两人团队设计的验证型方案</footer>
+  </main>
+</body>
+</html>
+
